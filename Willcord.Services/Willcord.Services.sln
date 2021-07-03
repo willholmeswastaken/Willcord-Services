@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Willcord.Services.Gateway", "Willcord.Services.Gateway\Willcord.Services.Gateway.csproj", "{59A0AF57-094B-44BB-9671-7AF930BB5A34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Willcord.Services.Gateway", "Willcord.Services.Gateway\Willcord.Services.Gateway.csproj", "{59A0AF57-094B-44BB-9671-7AF930BB5A34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Willcord.Services.Servers", "Willcord.Services.Servers\Willcord.Services.Servers.csproj", "{6A0598FF-3C06-4901-833A-AF2D0BA5C8DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Willcord.Services.Channels", "Willcord.Services.Channels\Willcord.Services.Channels.csproj", "{1F3FEDBE-E491-47E1-9E94-908F8D60F65B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Willcord.Services.Messages", "Willcord.Services.Messages\Willcord.Services.Messages.csproj", "{A6DCA079-E2B9-4382-B756-CF7306DF9684}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Willcord.Services.Realtime", "Willcord.Services.Realtime\Willcord.Services.Realtime.csproj", "{3AC70576-468D-4550-8BE8-AE0A2B98ED74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{59A0AF57-094B-44BB-9671-7AF930BB5A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59A0AF57-094B-44BB-9671-7AF930BB5A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59A0AF57-094B-44BB-9671-7AF930BB5A34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A0598FF-3C06-4901-833A-AF2D0BA5C8DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A0598FF-3C06-4901-833A-AF2D0BA5C8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A0598FF-3C06-4901-833A-AF2D0BA5C8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A0598FF-3C06-4901-833A-AF2D0BA5C8DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F3FEDBE-E491-47E1-9E94-908F8D60F65B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F3FEDBE-E491-47E1-9E94-908F8D60F65B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F3FEDBE-E491-47E1-9E94-908F8D60F65B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F3FEDBE-E491-47E1-9E94-908F8D60F65B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6DCA079-E2B9-4382-B756-CF7306DF9684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6DCA079-E2B9-4382-B756-CF7306DF9684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6DCA079-E2B9-4382-B756-CF7306DF9684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DCA079-E2B9-4382-B756-CF7306DF9684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AC70576-468D-4550-8BE8-AE0A2B98ED74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC70576-468D-4550-8BE8-AE0A2B98ED74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC70576-468D-4550-8BE8-AE0A2B98ED74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC70576-468D-4550-8BE8-AE0A2B98ED74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
