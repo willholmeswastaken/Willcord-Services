@@ -1,16 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Okta.AspNetCore;
 
 namespace Willcord.Services.Servers
 {
@@ -31,6 +25,17 @@ namespace Willcord.Services.Servers
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Willcord.Services.Servers", Version = "v1" });
+            });
+
+            services.AddAuthentication(sharedOptions =>
+            {
+                sharedOptions.DefaultAuthenticateScheme = Okta.AspNetCore.OktaDefaults.ApiAuthenticationScheme;
+                sharedOptions.DefaultChallengeScheme = Okta.AspNetCore.OktaDefaults.ApiAuthenticationScheme;
+                sharedOptions.DefaultSignInScheme = Okta.AspNetCore.OktaDefaults.ApiAuthenticationScheme;
+            })
+            .AddOktaWebApi(new OktaWebApiOptions
+            {
+             
             });
         }
 
