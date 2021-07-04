@@ -13,6 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Willcord.Services.Messages"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Willcord.Services.Realtime", "Willcord.Services.Realtime\Willcord.Services.Realtime.csproj", "{3AC70576-468D-4550-8BE8-AE0A2B98ED74}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Channels", "Channels", "{75A50711-177B-4F91-AD3C-8CF8594E30C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messages", "Messages", "{04376775-EFBB-45FC-8D2B-78B2625750F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servers", "Servers", "{E8ED993C-6DBD-4692-9E7B-F8468C10B48B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Realtime", "Realtime", "{059291D7-3A8A-4FED-8B79-F3C8DE509FD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,5 +53,11 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DCF7843E-2868-4EF8-8FF7-D193D62C2DBD}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1F3FEDBE-E491-47E1-9E94-908F8D60F65B} = {75A50711-177B-4F91-AD3C-8CF8594E30C3}
+		{A6DCA079-E2B9-4382-B756-CF7306DF9684} = {04376775-EFBB-45FC-8D2B-78B2625750F1}
+		{3AC70576-468D-4550-8BE8-AE0A2B98ED74} = {059291D7-3A8A-4FED-8B79-F3C8DE509FD2}
+		{6A0598FF-3C06-4901-833A-AF2D0BA5C8DA} = {E8ED993C-6DBD-4692-9E7B-F8468C10B48B}
 	EndGlobalSection
 EndGlobal
