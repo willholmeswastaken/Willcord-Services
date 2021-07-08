@@ -3,7 +3,7 @@ using Willcord.Services.Servers.Models;
 
 namespace Willcord.Services.Servers.Data
 {
-    public class ServerRepository : IRepository<Server>
+    public class ServerDynamoDbRepository : IRepository<Server>
     {
         public void Delete(Server entity)
         {
