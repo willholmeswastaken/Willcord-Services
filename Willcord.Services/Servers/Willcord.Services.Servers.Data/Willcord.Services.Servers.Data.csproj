@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Willcord.Services.Common\Willcord.Services.Common.csproj" />
+    <ProjectReference Include="..\Willcord.Services.Servers.Models\Willcord.Services.Servers.Models.csproj" />
   </ItemGroup>
 
 </Project>
