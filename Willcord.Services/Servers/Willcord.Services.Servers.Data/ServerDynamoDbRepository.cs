@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using EfficientDynamoDb;
-using EfficientDynamoDb.Configs;
 using EfficientDynamoDb.FluentCondition.Core;
 using Microsoft.Toolkit.Diagnostics;
 using Willcord.Services.Common;
@@ -9,43 +7,54 @@ using Willcord.Services.Servers.Models;
 
 namespace Willcord.Services.Servers.Data
 {
-    public class ServerDynamoDbRepository : IRepository<Server>
+    public class ServerDynamoDbRepository : DynamoDbRepository, IRepository<Server>
     {
-        private readonly IDynamoDbContext _dynamoDbContext;
         public ServerDynamoDbRepository(IDynamoDbContextFactory dynamoDbContextFactory)
+        : base(dynamoDbContextFactory, "serverConfig.json")
         {
-            _dynamoDbContext = dynamoDbContextFactory.Create(RegionEndpoint.EUWest1, "", "");
         }
         
-        public Task Delete(Server entity)
+        public async Task Delete(Server entity)
         {
-            throw new System.NotImplementedException();
+            Guard.IsNotNull(entity, nameof(entity));
+            Guard.IsNotNullOrWhiteSpace(entity.Id, nameof(entity.Id));
+            await Delete(entity.Id);
         }
 
-        public Task Delete(string id)
+        public async Task Delete(string id)
         {
-            throw new System.NotImplementedException();
+            Guard.IsNotNullOrWhiteSpace(id, nameof(id));
+            await DynamoDbContext.DeleteItemAsync<Server>(id);
         }
 
         public async Task Insert(Server entity)
         {
-            await _dynamoDbContext.PutItemAsync(entity);
+            Guard.IsNotNull(entity, nameof(entity));
+            Guard.IsNotNullOrWhiteSpace(entity.Name, nameof(entity.Name));
+            await DynamoDbContext.PutItemAsync(entity);
         }
 
-        public Task Update(Server entity)
+        public async Task Update(Server entity)
         {
-            throw new System.NotImplementedException();
+            Guard.IsNotNull(entity, nameof(entity));
+            Guard.IsNotNullOrWhiteSpace(entity.Name, nameof(entity.Name));
+            await DynamoDbContext.UpdateItem<Server>()
+                .WithPrimaryKey(entity.Id)
+                .On(x => x.Name).Assign(entity.Name)
+                .On(x => x.DeletedOn).Assign(entity.DeletedOn)
+                .On(x => x.DeletedById).Assign(entity.DeletedById)
+                .ExecuteAsync();
         }
 
         public async Task<Server> GetById(string id)
         {
             Guard.IsNotNullOrWhiteSpace(id, nameof(id));
-            return await _dynamoDbContext.GetItemAsync<Server>(id);
+            return await DynamoDbContext.GetItemAsync<Server>(id);
         }
 
         public async Task<IEnumerable<Server>> GetFilteredAsync(FilterBase filter)
         {
-            return await _dynamoDbContext.Query<Server>()
+            return await DynamoDbContext.Query<Server>()
                 .WithKeyExpression(filter)
                 .ToListAsync();
         }
