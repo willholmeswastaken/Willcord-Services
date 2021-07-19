@@ -18,12 +18,14 @@ namespace Willcord.Services.Servers.Data
         {
             Guard.IsNotNull(entity, nameof(entity));
             Guard.IsNotNullOrWhiteSpace(entity.Id, nameof(entity.Id));
+
             await Delete(entity.Id);
         }
 
         public async Task Delete(string id)
         {
             Guard.IsNotNullOrWhiteSpace(id, nameof(id));
+
             await DynamoDbContext.DeleteItemAsync<Server>(id);
         }
 
@@ -31,6 +33,7 @@ namespace Willcord.Services.Servers.Data
         {
             Guard.IsNotNull(entity, nameof(entity));
             Guard.IsNotNullOrWhiteSpace(entity.Name, nameof(entity.Name));
+
             await DynamoDbContext.PutItemAsync(entity);
         }
 
@@ -38,6 +41,7 @@ namespace Willcord.Services.Servers.Data
         {
             Guard.IsNotNull(entity, nameof(entity));
             Guard.IsNotNullOrWhiteSpace(entity.Name, nameof(entity.Name));
+
             await DynamoDbContext.UpdateItem<Server>()
                 .WithPrimaryKey(entity.Id)
                 .On(x => x.Name).Assign(entity.Name)
@@ -49,6 +53,7 @@ namespace Willcord.Services.Servers.Data
         public async Task<Server> GetById(string id)
         {
             Guard.IsNotNullOrWhiteSpace(id, nameof(id));
+
             return await DynamoDbContext.GetItemAsync<Server>(id);
         }
 
