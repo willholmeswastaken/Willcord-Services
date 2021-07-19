@@ -32,16 +32,16 @@ namespace Willcord.Services.Servers
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Willcord.Services.Servers", Version = "v1" });
             });
 
-            services.AddAuthentication(sharedOptions =>
-            {
-                sharedOptions.DefaultAuthenticateScheme = Okta.AspNetCore.OktaDefaults.ApiAuthenticationScheme;
-                sharedOptions.DefaultChallengeScheme = Okta.AspNetCore.OktaDefaults.ApiAuthenticationScheme;
-                sharedOptions.DefaultSignInScheme = Okta.AspNetCore.OktaDefaults.ApiAuthenticationScheme;
-            })
-            .AddOktaWebApi(new OktaWebApiOptions
-            {
+            //services.AddAuthentication(sharedOptions =>
+            //{
+            //    sharedOptions.DefaultAuthenticateScheme = Okta.AspNetCore.OktaDefaults.ApiAuthenticationScheme;
+            //    sharedOptions.DefaultChallengeScheme = Okta.AspNetCore.OktaDefaults.ApiAuthenticationScheme;
+            //    sharedOptions.DefaultSignInScheme = Okta.AspNetCore.OktaDefaults.ApiAuthenticationScheme;
+            //})
+            //.AddOktaWebApi(new OktaWebApiOptions
+            //{
              
-            });
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

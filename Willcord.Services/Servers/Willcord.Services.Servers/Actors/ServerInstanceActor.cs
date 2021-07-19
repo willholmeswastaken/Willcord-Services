@@ -29,7 +29,7 @@ namespace Willcord.Services.Servers.Actors
             {
                 case CreateServer create:
                     {
-                        _log.Debug($"User {create.UserId} is creating a server named {create.Name}");
+                        _log.Info($"User {create.UserId} is creating a server named {create.Name}");
                         _serverFactory.Create(create.Name, create.UserId);
 
                         // todo: notify signalR hubs of new server.

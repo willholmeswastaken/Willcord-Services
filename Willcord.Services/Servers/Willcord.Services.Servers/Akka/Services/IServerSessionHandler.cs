@@ -2,7 +2,7 @@
 
 namespace Willcord.Services.Servers.Akka.Services
 {
-    interface IServerSessionHandler
+    public interface IServerSessionHandler
     {
         void Handle(IServerSessionMessage message);
     }

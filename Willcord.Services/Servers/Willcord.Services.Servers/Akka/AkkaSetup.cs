@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Willcord.Services.Servers.Akka.Services;
 
 namespace Willcord.Services.Servers.Akka
 {
@@ -6,7 +7,8 @@ namespace Willcord.Services.Servers.Akka
     {
         public static void AddAkka(this IServiceCollection services)
         {
-            services.AddHostedService<AkkaService>();
+            services.AddSingleton<IServerSessionHandler, AkkaService>();
+            services.AddHostedService<AkkaService>(sp => (AkkaService)sp.GetRequiredService<IServerSessionHandler>());
         }
     }
 }

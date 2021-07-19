@@ -26,5 +26,10 @@ namespace Willcord.Services.Servers.Actors
                     break;
             }
         }
+
+        protected override void PreStart()
+        {
+            _serviceProvider = ServiceProvider.For(Context.System);
+        }
     }
 }
