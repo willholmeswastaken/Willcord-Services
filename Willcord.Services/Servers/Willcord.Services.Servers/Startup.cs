@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Okta.AspNetCore;
 using Willcord.Services.Servers.Akka;
+using Willcord.Services.Servers.Logic;
 
 namespace Willcord.Services.Servers
 {
@@ -24,6 +25,7 @@ namespace Willcord.Services.Servers
 
             services.AddControllers();
             services.AddAkka();
+            services.AddServerLogic();
             services.AddSignalR();
             services.AddSwaggerGen(c =>
             {

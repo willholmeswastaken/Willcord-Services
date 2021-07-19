@@ -4,6 +4,6 @@ namespace Willcord.Services.Servers.Logic
 {
     public interface IServerFactory
     {
-        Server Create(string id, string name, string createdById);
+        Server Create(string name, string createdById);
     }
 }

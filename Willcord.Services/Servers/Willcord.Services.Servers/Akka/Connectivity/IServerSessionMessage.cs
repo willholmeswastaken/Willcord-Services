@@ -2,6 +2,6 @@
 {
     public interface IServerSessionMessage
     {
-        string ServerId { get; }
+        string InstanceId { get; }
     }
 }
