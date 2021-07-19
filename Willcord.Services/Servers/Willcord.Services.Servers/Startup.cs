@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Okta.AspNetCore;
+using Willcord.Services.Servers.Akka;
 
 namespace Willcord.Services.Servers
 {
@@ -22,6 +23,8 @@ namespace Willcord.Services.Servers
         {
 
             services.AddControllers();
+            services.AddAkka();
+            services.AddSignalR();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Willcord.Services.Servers", Version = "v1" });
